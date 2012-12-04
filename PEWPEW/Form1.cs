@@ -15,5 +15,10 @@ namespace PEWPEW
         {
             InitializeComponent();
         }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.Text = e.X.ToString() + "   " + e.Y.ToString();
+        }
     }
 }
