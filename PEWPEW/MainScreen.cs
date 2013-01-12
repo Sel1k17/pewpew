@@ -16,39 +16,67 @@ namespace PEWPEW
         Point ShapeStart;
         bool IsShapeStart = true;
         string curFile;
+        //Pen p;
+        Pen p1 = new Pen(Color.Black);
+        Pen p2 = new Pen(Color.Black);
+        Shape TempShape;
+        //Pen p3 = new Pen(Color.Red,2);
         public MainScreen()
         {
             InitializeComponent();
         }
         private void rb_CheckedChanged(object sender, EventArgs e)
         {
-            IsShapeStart = !IsShapeStart;
+            IsShapeStart = true;
         }
         private void MainScreen_MouseMove(object sender, MouseEventArgs e)
         {
-            this.Text = Convert.ToString(e.X) + " . " + (e.Y);
-            this.Text = Convert.ToString(e.Location);
+            //this.Text = Convert.ToString(e.X) + " . " + (e.Y);
+            //this.Text = Convert.ToString(e.Location);
+            if (rb_Cross.Checked) TempShape = new Cross(e.X,e.Y);
+            else if (rb_Line.Checked)
+            {
+                if (!IsShapeStart)
+                {
+                    TempShape = new Line(ShapeStart, e.Location);
+                }
+            }
+            else if (rb_circle.Checked)
+            {
+                if (!IsShapeStart)
+                {
+                    TempShape = new Circle(ShapeStart, e.Location);
+                }
+            }
+            this.Refresh();
         }
         private void MainScreen_Paint(object sender, PaintEventArgs e)
         {
-            foreach (Shape p in this.Shapes)
+            if (TempShape != null)
             {
-                p.DrawWith(e.Graphics);
+                TempShape.DrawWith(e.Graphics, p2);
+            }
+            foreach (Shape p in Shapes)
+            {
+                p.DrawWith(e.Graphics,p1);
             }
         }
         private void MainScreen_MouseDown(object sender, MouseEventArgs e)
         {
-            if (rb_Cross.Checked) Shapes.Add(new Cross(e.X,e.Y));
+            if (rb_Cross.Checked)
+            {
+                AddShape(TempShape);
+            }
             if (rb_Line.Checked)
             {
-                if (!IsShapeStart) ShapeStart = e.Location;
-                else Shapes.Add(new Line(ShapeStart, e.Location));
+                if (IsShapeStart) ShapeStart = e.Location;
+                else AddShape(TempShape);
                 IsShapeStart = !IsShapeStart;
             }
             if (rb_circle.Checked)
             {
                 if (IsShapeStart) ShapeStart = e.Location;
-                else Shapes.Add(new Circle(ShapeStart, e.Location));
+                else AddShape(TempShape);
                 IsShapeStart = !IsShapeStart;
             }
             this.Refresh();
