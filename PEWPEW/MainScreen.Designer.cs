@@ -56,13 +56,14 @@
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.Shape_List = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // rb_Cross
             // 
             this.rb_Cross.AutoSize = true;
-            this.rb_Cross.Location = new System.Drawing.Point(400, 455);
+            this.rb_Cross.Location = new System.Drawing.Point(611, 453);
             this.rb_Cross.Name = "rb_Cross";
             this.rb_Cross.Size = new System.Drawing.Size(67, 17);
             this.rb_Cross.TabIndex = 2;
@@ -74,7 +75,7 @@
             // rb_Line
             // 
             this.rb_Line.AutoSize = true;
-            this.rb_Line.Location = new System.Drawing.Point(400, 478);
+            this.rb_Line.Location = new System.Drawing.Point(611, 476);
             this.rb_Line.Name = "rb_Line";
             this.rb_Line.Size = new System.Drawing.Size(57, 17);
             this.rb_Line.TabIndex = 3;
@@ -86,7 +87,7 @@
             // rb_circle
             // 
             this.rb_circle.AutoSize = true;
-            this.rb_circle.Location = new System.Drawing.Point(400, 501);
+            this.rb_circle.Location = new System.Drawing.Point(611, 499);
             this.rb_circle.Name = "rb_circle";
             this.rb_circle.Size = new System.Drawing.Size(48, 17);
             this.rb_circle.TabIndex = 4;
@@ -104,7 +105,7 @@
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(507, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(698, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -265,11 +266,20 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // Shape_List
+            // 
+            this.Shape_List.FormattingEnabled = true;
+            this.Shape_List.Location = new System.Drawing.Point(482, 43);
+            this.Shape_List.Name = "Shape_List";
+            this.Shape_List.Size = new System.Drawing.Size(196, 394);
+            this.Shape_List.TabIndex = 6;
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 537);
+            this.ClientSize = new System.Drawing.Size(698, 537);
+            this.Controls.Add(this.Shape_List);
             this.Controls.Add(this.rb_circle);
             this.Controls.Add(this.rb_Line);
             this.Controls.Add(this.rb_Cross);
@@ -317,6 +327,7 @@
         private System.Windows.Forms.ToolStripMenuItem параметрыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ListBox Shape_List;
     }
 }
 

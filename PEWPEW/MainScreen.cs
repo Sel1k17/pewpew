@@ -97,6 +97,7 @@ namespace PEWPEW
         private void AddShape(Shape s)
         {
             Shapes.Add(s);
+            Shape_List.Items.Add(s.ConfString);
         }
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)

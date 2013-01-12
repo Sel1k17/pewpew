@@ -11,6 +11,7 @@ namespace PEWPEW
     {
         public abstract void DrawWith(Graphics g, Pen p);
         public abstract void SaveTo(StreamWriter sw);
+        public abstract string ConfString { get; }
     }
     public class Cross : Shape
     {
@@ -39,6 +40,13 @@ namespace PEWPEW
             string[] str = line.Split(' ');
             X = Convert.ToInt32(str[0]);
             Y = Convert.ToInt32(str[1]);
+        }
+        public override string ConfString
+        {
+            get
+            {
+                return "Cross " + Convert.ToString(X) + " : " + Convert.ToString(Y);
+            }
         }
     }
     public class Line : Shape
@@ -74,6 +82,13 @@ namespace PEWPEW
             F.X = Convert.ToInt32(str[2]);
             F.Y = Convert.ToInt32(str[3]);
         }
+        public override string ConfString
+        {
+            get
+            {
+                return "Line " + Convert.ToString(C) + " : " + Convert.ToString(F);
+            }
+        }
     }
     public class Circle : Shape
     {
@@ -107,5 +122,12 @@ namespace PEWPEW
             C.Y = Convert.ToInt32(str[1]);
             r = Convert.ToInt32(str[2]);
         }
+         public override string ConfString
+         {
+             get
+             {
+                 return "Circle " + Convert.ToString(C) + " " + Convert.ToString(P);
+             }
+         }
     }
 }
