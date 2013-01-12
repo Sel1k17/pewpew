@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PEWPEW
 {
@@ -14,6 +15,7 @@ namespace PEWPEW
         List<Shape> Shapes = new List<Shape>();
         Point ShapeStart;
         bool IsShapeStart = true;
+        string curFile;
         public MainScreen()
         {
             InitializeComponent();
@@ -50,6 +52,24 @@ namespace PEWPEW
                 IsShapeStart = !IsShapeStart;
             }
             this.Refresh();
+        }
+        private void сохранитьКакToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                curFile = saveFileDialog1.FileName;
+                StreamWriter sw = new StreamWriter(curFile);
+                foreach (Shape p in this.Shapes)
+                {
+                    p.SaveTo(sw);
+                }
+                sw.Close();
+            }
+        }
+
+        private void MainScreen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
