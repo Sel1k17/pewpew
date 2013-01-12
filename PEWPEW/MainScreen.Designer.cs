@@ -56,7 +56,8 @@
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.Shape_List = new System.Windows.Forms.ListBox();
+            this.Shapes_List = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -266,20 +267,32 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // Shape_List
+            // Shapes_List
             // 
-            this.Shape_List.FormattingEnabled = true;
-            this.Shape_List.Location = new System.Drawing.Point(482, 43);
-            this.Shape_List.Name = "Shape_List";
-            this.Shape_List.Size = new System.Drawing.Size(196, 394);
-            this.Shape_List.TabIndex = 6;
+            this.Shapes_List.FormattingEnabled = true;
+            this.Shapes_List.Location = new System.Drawing.Point(482, 43);
+            this.Shapes_List.Name = "Shapes_List";
+            this.Shapes_List.Size = new System.Drawing.Size(196, 394);
+            this.Shapes_List.TabIndex = 6;
+            this.Shapes_List.SelectedIndexChanged += new System.EventHandler(this.Shapes_List_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(495, 453);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 29);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Удалить";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(698, 537);
-            this.Controls.Add(this.Shape_List);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Shapes_List);
             this.Controls.Add(this.rb_circle);
             this.Controls.Add(this.rb_Line);
             this.Controls.Add(this.rb_Cross);
@@ -327,7 +340,8 @@
         private System.Windows.Forms.ToolStripMenuItem параметрыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.ListBox Shape_List;
+        private System.Windows.Forms.ListBox Shapes_List;
+        private System.Windows.Forms.Button button1;
     }
 }
 

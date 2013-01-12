@@ -97,7 +97,7 @@ namespace PEWPEW
         private void AddShape(Shape s)
         {
             Shapes.Add(s);
-            Shape_List.Items.Add(s.ConfString);
+            Shapes_List.Items.Add(s.ConfString);
         }
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -136,6 +136,23 @@ namespace PEWPEW
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            while (Shapes_List.SelectedIndices.Count > 0)
+            {
+                Shapes.RemoveAt(Shapes_List.SelectedIndices[0]);
+                Shapes_List.Items.RemoveAt(Shapes_List.SelectedIndices[0]);
+            }
+            button1.Enabled = false;
+            TempShape = null;
+            this.Refresh();
+        }
+
+        private void Shapes_List_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            button1.Enabled = true;
         }
     }
 }
