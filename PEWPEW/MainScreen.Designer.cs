@@ -30,6 +30,7 @@
         {
             this.rb_Cross = new System.Windows.Forms.RadioButton();
             this.rb_Line = new System.Windows.Forms.RadioButton();
+            this.rb_circle = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // rb_Cross
@@ -56,11 +57,24 @@
             this.rb_Line.UseVisualStyleBackColor = true;
             this.rb_Line.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
             // 
+            // rb_circle
+            // 
+            this.rb_circle.AutoSize = true;
+            this.rb_circle.Location = new System.Drawing.Point(400, 501);
+            this.rb_circle.Name = "rb_circle";
+            this.rb_circle.Size = new System.Drawing.Size(48, 17);
+            this.rb_circle.TabIndex = 4;
+            this.rb_circle.TabStop = true;
+            this.rb_circle.Text = "Круг";
+            this.rb_circle.UseVisualStyleBackColor = true;
+            this.rb_circle.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 537);
+            this.Controls.Add(this.rb_circle);
             this.Controls.Add(this.rb_Line);
             this.Controls.Add(this.rb_Cross);
             this.Name = "MainScreen";
@@ -77,6 +91,7 @@
 
         private System.Windows.Forms.RadioButton rb_Cross;
         private System.Windows.Forms.RadioButton rb_Line;
+        private System.Windows.Forms.RadioButton rb_circle;
     }
 }
 
