@@ -1,6 +1,6 @@
 ﻿namespace PEWPEW
 {
-    partial class Form1
+    partial class MainScreen
     {
         /// <summary>
         /// Требуется переменная конструктора.
@@ -30,14 +30,17 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 273);
-            this.Name = "Form1";
+            this.Name = "MainScreen";
             this.Text = "Form1";
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainScreen_Paint);
+            this.Load += new System.EventHandler(this.MainScreen_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainScreen_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainScreen_MouseMove);
             this.ResumeLayout(false);
 
         }
