@@ -19,17 +19,20 @@ namespace PEWPEW
         bool IsShapeStart = true;
         string curFile;
         Shape TempShape;
+        
        
         public MainScreen()
         {
             InitializeComponent();
+            progressBar1.Value = 0;
            
         }
         private void rb_CheckedChanged(object sender, EventArgs e)
         {
             IsShapeStart = true;
             TempShape = null;
-        }
+                   }
+
         private void MainScreen_MouseMove(object sender, MouseEventArgs e)
         {
                if (rb_Cross.Checked) TempShape = new Cross(e.X,e.Y);
@@ -59,33 +62,38 @@ namespace PEWPEW
             foreach (Shape p in Shapes)
             {
                 p.DrawWith(e.Graphics,p1);
+           
             }
         }
         private void MainScreen_MouseDown(object sender, MouseEventArgs e)
         {
-            int a;
-            progressBar1.Increment(1);
-      label3.Text="Количество грязи: "+Convert.ToString(progressBar1.Value);
+        
+        
+      
  
             if (progressBar1.Value==100)  label2.Visible = true;
            
             if (rb_Cross.Checked)
-            {
+            {  progressBar1.Increment(1); 
                 AddShape(TempShape);
+               
             }
             if (rb_Line.Checked)
             {
-                if (IsShapeStart) ShapeStart = e.Location;
+                if (IsShapeStart) {ShapeStart = e.Location; progressBar1.Increment(1); }
                 else AddShape(TempShape);
                 IsShapeStart = !IsShapeStart;
+             
             }
             if (rb_circle.Checked)
             {
-                if (IsShapeStart) ShapeStart = e.Location;
+                if (IsShapeStart) { ShapeStart = e.Location; progressBar1.Increment(1); }
                 else AddShape(TempShape);
                 IsShapeStart = !IsShapeStart;
+          
             }
             this.Refresh();
+            label3.Text = "Количество грязи: " + Convert.ToString(progressBar1.Value);
         }
         private void сохранитьКакToolStripMenuItem_Click(object sender, EventArgs e)
         {
