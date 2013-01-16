@@ -180,7 +180,22 @@ namespace PEWPEW
       private void button3_Click(object sender, EventArgs e)
       {
           MainScreen.ActiveForm.BackColor=MainScreen.DefaultBackColor;
-          
+         
+      }
+
+      private void button4_Click(object sender, EventArgs e)
+      {
+
+
+          Shapes.Clear();
+            Shapes_List.Items.Clear();
+            button1.Enabled = false;
+            TempShape = null;
+            this.Refresh();
+            progressBar1.Value = 0;
+            label3.Text = "Количество грязи: " + Convert.ToString(progressBar1.Value);
+
+
       }
 
     
