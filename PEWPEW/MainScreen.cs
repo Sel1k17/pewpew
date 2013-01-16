@@ -19,7 +19,7 @@ namespace PEWPEW
         bool IsShapeStart = true;
         string curFile;
         Shape TempShape;
-        
+        Pen p3 = new Pen(Color.Red);
        
         public MainScreen()
         {
@@ -55,7 +55,7 @@ namespace PEWPEW
         }
         private void MainScreen_Paint(object sender, PaintEventArgs e)
         {
-            System.Drawing.Color colorr = colorDialog1.Color; 
+          
             if (TempShape != null)
             {
                 TempShape.DrawWith(e.Graphics, p2);
@@ -157,11 +157,14 @@ namespace PEWPEW
         public void button1_Click(object sender, EventArgs e)
         {
             progressBar1.Increment(-1);
+         
+           
             while (Shapes_List.SelectedIndices.Count > 0)
             {
                 Shapes.RemoveAt(Shapes_List.SelectedIndices[0]);
                 Shapes_List.Items.RemoveAt(Shapes_List.SelectedIndices[0]);
             }
+            Pen p3 = new Pen(Color.Red);
             button1.Enabled = false;
             TempShape = null;
             this.Refresh();

@@ -280,6 +280,7 @@
             this.Shapes_List.FormattingEnabled = true;
             this.Shapes_List.Location = new System.Drawing.Point(482, 43);
             this.Shapes_List.Name = "Shapes_List";
+            this.Shapes_List.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.Shapes_List.Size = new System.Drawing.Size(196, 394);
             this.Shapes_List.TabIndex = 6;
             this.Shapes_List.SelectedIndexChanged += new System.EventHandler(this.Shapes_List_SelectedIndexChanged);
