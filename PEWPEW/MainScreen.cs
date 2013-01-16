@@ -63,6 +63,11 @@ namespace PEWPEW
         }
         private void MainScreen_MouseDown(object sender, MouseEventArgs e)
         {
+            progressBar1.Increment(1);
+            if (progressBar1.Value==100)
+            {
+                label2.Visible = true;
+            }
             if (rb_Cross.Checked)
             {
                 AddShape(TempShape);
@@ -167,5 +172,7 @@ namespace PEWPEW
           MainScreen.ActiveForm.BackColor=MainScreen.DefaultBackColor;
           
       }
+
+    
     }
 }
