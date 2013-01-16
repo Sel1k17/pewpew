@@ -16,7 +16,7 @@ namespace PEWPEW
     public class Cross : Shape
     {
         int X, Y;
-        Pen p = new Pen(Color.Black);
+       
         public Cross(int _X, int _Y)
         {
             X = _X;
@@ -52,7 +52,7 @@ namespace PEWPEW
     public class Line : Shape
     {
         Point C, F;
-        Pen p = new Pen(Color.Black);
+      
         public Line(Point _C, Point _F)
         {
             this.C = _C;
@@ -93,7 +93,7 @@ namespace PEWPEW
     public class Circle : Shape
     {
         Point C, P;
-        Pen p = new Pen(Color.Black);
+     
         int r;
         public Circle(Point _C, Point _P)
         {

@@ -12,18 +12,21 @@ namespace PEWPEW
 {
     public partial class MainScreen : Form
     {
+        Pen p1 = new Pen(Color.Black);
+        Pen p2 = new Pen(Color.Gray);
         List<Shape> Shapes = new List<Shape>();
         Point ShapeStart;
         bool IsShapeStart = true;
         string curFile;
         //Pen p;
-        Pen p1 = new Pen(Color.Black);
-        Pen p2 = new Pen(Color.Black);
+        
+      
         Shape TempShape;
         //Pen p3 = new Pen(Color.Red,2);
         public MainScreen()
         {
             InitializeComponent();
+           
         }
         private void rb_CheckedChanged(object sender, EventArgs e)
         {
@@ -52,6 +55,7 @@ namespace PEWPEW
         }
         private void MainScreen_Paint(object sender, PaintEventArgs e)
         {
+            System.Drawing.Color colorr = colorDialog1.Color; 
             if (TempShape != null)
             {
                 TempShape.DrawWith(e.Graphics, p2);
@@ -158,7 +162,13 @@ namespace PEWPEW
       public void button2_Click(object sender, EventArgs e)
         {
             colorDialog1.ShowDialog();
-       PEWPEW.MainScreen.ActiveForm.BackColor= colorDialog1.Color;
-                     }
+   MainScreen.ActiveForm.BackColor= colorDialog1.Color;
+     
+      }
+
+      private void button3_Click(object sender, EventArgs e)
+      {
+          MainScreen.ActiveForm.BackColor=MainScreen.DefaultBackColor;
+      }
     }
 }
