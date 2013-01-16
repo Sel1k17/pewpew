@@ -345,7 +345,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(263, 483);
+            this.label3.Location = new System.Drawing.Point(253, 453);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 13);
             this.label3.TabIndex = 13;
@@ -353,11 +353,11 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(495, 490);
+            this.button4.Location = new System.Drawing.Point(246, 473);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(143, 23);
             this.button4.TabIndex = 14;
-            this.button4.Text = "button4";
+            this.button4.Text = "ВЫНЕСТИ МУСОР";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 

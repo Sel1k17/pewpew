@@ -25,13 +25,14 @@ namespace PEWPEW
         {
             InitializeComponent();
             progressBar1.Value = 0;
-           
+         
         }
         private void rb_CheckedChanged(object sender, EventArgs e)
         {
             IsShapeStart = true;
             TempShape = null;
-                   }
+             
+        }
 
         private void MainScreen_MouseMove(object sender, MouseEventArgs e)
         {
@@ -67,8 +68,8 @@ namespace PEWPEW
         }
         private void MainScreen_MouseDown(object sender, MouseEventArgs e)
         {
-        
-        
+
+           
       
  
             if (progressBar1.Value==100)  label2.Visible = true;
@@ -94,6 +95,7 @@ namespace PEWPEW
             }
             this.Refresh();
             label3.Text = "Количество грязи: " + Convert.ToString(progressBar1.Value);
+           
         }
         private void сохранитьКакToolStripMenuItem_Click(object sender, EventArgs e)
         {
