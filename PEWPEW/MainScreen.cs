@@ -18,11 +18,8 @@ namespace PEWPEW
         Point ShapeStart;
         bool IsShapeStart = true;
         string curFile;
-        //Pen p;
-        
-      
         Shape TempShape;
-        //Pen p3 = new Pen(Color.Red,2);
+       
         public MainScreen()
         {
             InitializeComponent();
@@ -35,9 +32,7 @@ namespace PEWPEW
         }
         private void MainScreen_MouseMove(object sender, MouseEventArgs e)
         {
-            //this.Text = Convert.ToString(e.X) + " . " + (e.Y);
-            //this.Text = Convert.ToString(e.Location);
-            if (rb_Cross.Checked) TempShape = new Cross(e.X,e.Y);
+               if (rb_Cross.Checked) TempShape = new Cross(e.X,e.Y);
             else if (rb_Line.Checked)
             {
                 if (!IsShapeStart)
@@ -170,6 +165,7 @@ namespace PEWPEW
       private void button3_Click(object sender, EventArgs e)
       {
           MainScreen.ActiveForm.BackColor=MainScreen.DefaultBackColor;
+          
       }
     }
 }
