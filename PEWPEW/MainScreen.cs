@@ -31,6 +31,7 @@ namespace PEWPEW
         private void rb_CheckedChanged(object sender, EventArgs e)
         {
             IsShapeStart = true;
+            TempShape = null;
         }
         private void MainScreen_MouseMove(object sender, MouseEventArgs e)
         {
