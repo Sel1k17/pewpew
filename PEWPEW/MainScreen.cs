@@ -63,11 +63,12 @@ namespace PEWPEW
         }
         private void MainScreen_MouseDown(object sender, MouseEventArgs e)
         {
+            int a;
             progressBar1.Increment(1);
-            if (progressBar1.Value==100)
-            {
-                label2.Visible = true;
-            }
+      label3.Text="Количество грязи: "+Convert.ToString(progressBar1.Value);
+ 
+            if (progressBar1.Value==100)  label2.Visible = true;
+           
             if (rb_Cross.Checked)
             {
                 AddShape(TempShape);
@@ -145,6 +146,7 @@ namespace PEWPEW
 
         public void button1_Click(object sender, EventArgs e)
         {
+            progressBar1.Increment(-1);
             while (Shapes_List.SelectedIndices.Count > 0)
             {
                 Shapes.RemoveAt(Shapes_List.SelectedIndices[0]);
