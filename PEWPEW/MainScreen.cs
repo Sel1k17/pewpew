@@ -138,7 +138,7 @@ namespace PEWPEW
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             while (Shapes_List.SelectedIndices.Count > 0)
             {
@@ -154,5 +154,11 @@ namespace PEWPEW
         {
             button1.Enabled = true;
         }
+
+      public void button2_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+       PEWPEW.MainScreen.ActiveForm.BackColor= colorDialog1.Color;
+                     }
     }
 }
