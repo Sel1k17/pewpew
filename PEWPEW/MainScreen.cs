@@ -62,7 +62,10 @@ namespace PEWPEW
             }
             foreach (Shape p in Shapes)
             {
-                p.DrawWith(e.Graphics,p1);
+   
+     p.DrawWith(e.Graphics, p1);
+            
+                
            
             }
         }
@@ -95,7 +98,7 @@ namespace PEWPEW
             }
             this.Refresh();
             label3.Text = "Количество грязи: " + Convert.ToString(progressBar1.Value);
-           
+            if (progressBar1.Value == 100) label2.Visible = true;
         }
         private void сохранитьКакToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -156,18 +159,21 @@ namespace PEWPEW
 
         public void button1_Click(object sender, EventArgs e)
         {
-            progressBar1.Increment(-1);
+            
          
            
             while (Shapes_List.SelectedIndices.Count > 0)
             {
+                progressBar1.Increment(-1);
                 Shapes.RemoveAt(Shapes_List.SelectedIndices[0]);
                 Shapes_List.Items.RemoveAt(Shapes_List.SelectedIndices[0]);
             }
-            Pen p3 = new Pen(Color.Red);
+     
             button1.Enabled = false;
             TempShape = null;
             this.Refresh();
+            label3.Text = "Количество грязи: " + Convert.ToString(progressBar1.Value);
+            if (progressBar1.Value < 100) label2.Visible = false;
         }
 
         private void Shapes_List_SelectedIndexChanged(object sender, EventArgs e)
@@ -199,7 +205,7 @@ namespace PEWPEW
             this.Refresh();
             progressBar1.Value = 0;
             label3.Text = "Количество грязи: " + Convert.ToString(progressBar1.Value);
-
+            if (progressBar1.Value < 100) label2.Visible = false;
 
       }
 
